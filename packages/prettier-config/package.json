@@ -1,0 +1,33 @@
+{
+    "name": "@nddeps/prettier-config",
+    "version": "0.1.0",
+    "private": false,
+    "keywords": [
+        "prettier",
+        "prettier-config",
+        "config"
+    ],
+    "homepage": "https://github.com/No-Deprecated-Dependencies/config/packages/prettier-config",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/No-Deprecated-Dependencies/config.git"
+    },
+    "license": "MIT",
+    "author": "Aleksei Saenko",
+    "type": "module",
+    "exports": {
+        ".": "./dist/index.js",
+        "./package.json": "./package.json"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "./dist"
+    ],
+    "scripts": {
+        "build": "tsdown"
+    },
+    "peerDependencies": {
+        "prettier": ">=3.0.0"
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "name": "@nddeps/eslint-config",
+    "version": "0.1.0",
+    "private": false,
+    "keywords": [
+        "eslint",
+        "eslint-config",
+        "config"
+    ],
+    "homepage": "https://github.com/No-Deprecated-Dependencies/config/packages/eslint-config",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/No-Deprecated-Dependencies/config.git"
+    },
+    "license": "MIT",
+    "author": "Aleksei Saenko",
+    "type": "module",
+    "exports": {
+        ".": "./dist/index.js",
+        "./package.json": "./package.json"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "./dist"
+    ],
+    "scripts": {
+        "build": "tsdown"
+    },
+    "dependencies": {
+        "@eslint/js": "^10.0.1",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-perfectionist": "^5.6.0",
+        "eslint-plugin-prettier": "^5.5.5",
+        "globals": "^17.4.0",
+        "typescript-eslint": "^8.56.1"
+    },
+    "peerDependencies": {
+        "eslint": ">=9.0.0"
+    }
+}
