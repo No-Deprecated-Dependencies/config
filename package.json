@@ -27,5 +27,6 @@
         "tsdown": "catalog:",
         "typescript": "catalog:",
         "typescript-eslint": "catalog:"
-    }
+    },
+    "packageManager": "pnpm@10.30.3"
 }
