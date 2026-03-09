@@ -28,12 +28,12 @@
         "build": "tsdown"
     },
     "dependencies": {
-        "@eslint/js": "^10.0.1",
-        "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-perfectionist": "^5.6.0",
-        "eslint-plugin-prettier": "^5.5.5",
-        "globals": "^17.4.0",
-        "typescript-eslint": "^8.56.1"
+        "@eslint/js": "catalog:",
+        "eslint-config-prettier": "catalog:",
+        "eslint-plugin-perfectionist": "catalog:",
+        "eslint-plugin-prettier": "catalog:",
+        "globals": "catalog:",
+        "typescript-eslint": "catalog:"
     },
     "peerDependencies": {
         "eslint": ">=9.0.0"

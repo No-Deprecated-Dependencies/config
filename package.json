@@ -6,28 +6,26 @@
     "workspaces": [
         "packages/*"
     ],
-    "overrides": {
-        "vite": "^8.0.0-beta.13"
-    },
-    "dependencies": {
-        "tsdown": "^0.21.0"
+    "scripts": {
+        "sort-package-json": "sort-package-json package.json packages/*/package.json"
     },
     "devDependencies": {
-        "@eslint/js": "^10.0.1",
-        "eslint": "^10.0.3",
-        "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-perfectionist": "^5.6.0",
-        "eslint-plugin-prettier": "^5.5.5",
-        "globals": "^17.4.0",
-        "jiti": "^2.6.1",
-        "prettier": "3.8.1",
-        "stylelint": "^17.4.0",
-        "stylelint-config-recess-order": "^7.6.1",
-        "stylelint-config-standard": "^40.0.0",
-        "stylelint-config-standard-scss": "^17.0.0",
-        "stylelint-order": "^7.0.1",
-        "typescript": "~5.9.3",
-        "typescript-eslint": "^8.56.1",
-        "vite": "^8.0.0-beta.13"
+        "@eslint/js": "catalog:",
+        "eslint": "catalog:",
+        "eslint-config-prettier": "catalog:",
+        "eslint-plugin-perfectionist": "catalog:",
+        "eslint-plugin-prettier": "catalog:",
+        "globals": "catalog:",
+        "jiti": "catalog:",
+        "prettier": "catalog:",
+        "sort-package-json": "catalog:",
+        "stylelint": "catalog:",
+        "stylelint-config-recess-order": "catalog:",
+        "stylelint-config-standard": "catalog:",
+        "stylelint-config-standard-scss": "catalog:",
+        "stylelint-order": "catalog:",
+        "tsdown": "catalog:",
+        "typescript": "catalog:",
+        "typescript-eslint": "catalog:"
     }
 }
