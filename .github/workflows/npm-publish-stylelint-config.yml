@@ -1,6 +1,6 @@
 # This workflow will publish a package on npm when a workflow is dispatched
 
-name: Manual workflow
+name: Publish stylelint-config
 
 on: workflow_dispatch
 
