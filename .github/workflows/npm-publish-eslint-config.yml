@@ -1,11 +1,8 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+# This workflow will publish a package on npm when a workflow is dispatched
 
-name: Node.js Package
+name: Manual workflow
 
-on:
-    release:
-        types: [published]
+on: workflow_dispatch
 
 permissions:
     id-token: write
@@ -22,7 +19,7 @@ jobs:
                   node-version: 24
                   registry-url: https://registry.npmjs.org/
             - run: pnpm install
-            - run: pnpm -r build
-            - run: pnpm -r publish --provenance --access public
+            - run: pnpm --filter @nddeps/eslint-config build
+            - run: pnpm --filter @nddeps/eslint-config publish --provenance --access public
               env:
                   NODE_AUTH_TOKEN: ${{secrets.npm_token}}

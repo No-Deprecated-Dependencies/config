@@ -1,3 +1,3 @@
-import config from './packages/stylelint-config/src/index.ts'
+import { nddeps } from './packages/stylelint-config/src/index.ts'
 
-export default config
+export default nddeps()
