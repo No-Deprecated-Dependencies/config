@@ -14,3 +14,5 @@ function nddeps(): Config {
 }
 
 export { nddeps }
+
+export default nddeps()
