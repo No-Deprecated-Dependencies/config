@@ -2,23 +2,21 @@
     "name": "@nddeps/config",
     "version": "0.3.0",
     "private": true,
-    "type": "module",
     "workspaces": [
         "packages/*"
     ],
-    "scripts": {
-        "sort-package-json": "sort-package-json package.json packages/*/package.json"
-    },
+    "type": "module",
     "devDependencies": {
+        "@eslint/config-helpers": "catalog:",
         "@eslint/js": "catalog:",
+        "@prettier/plugin-oxc": "catalog:",
         "eslint": "catalog:",
-        "eslint-config-prettier": "catalog:",
         "eslint-plugin-perfectionist": "catalog:",
-        "eslint-plugin-prettier": "catalog:",
+        "eslint-plugin-react": "catalog:",
         "globals": "catalog:",
         "jiti": "catalog:",
+        "oxfmt": "catalog:",
         "prettier": "catalog:",
-        "sort-package-json": "catalog:",
         "stylelint": "catalog:",
         "stylelint-config-recess-order": "catalog:",
         "stylelint-config-standard": "catalog:",

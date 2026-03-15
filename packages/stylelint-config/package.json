@@ -3,27 +3,27 @@
     "version": "0.3.0",
     "private": false,
     "keywords": [
+        "config",
         "stylelint",
-        "stylelint-config",
-        "config"
+        "stylelint-config"
     ],
     "homepage": "https://github.com/No-Deprecated-Dependencies/config/packages/stylelint-config",
+    "license": "MIT",
+    "author": "Aleksei Saenko",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/No-Deprecated-Dependencies/config.git"
     },
-    "license": "MIT",
-    "author": "Aleksei Saenko",
+    "files": [
+        "./dist"
+    ],
     "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "exports": {
         ".": "./dist/index.js",
         "./package.json": "./package.json"
     },
-    "main": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "files": [
-        "./dist"
-    ],
     "scripts": {
         "build": "tsdown"
     },

@@ -1,13 +1,13 @@
 {
-    "name": "@nddeps/eslint-config",
-    "version": "0.3.0",
+    "name": "@nddeps/oxfmt-config",
+    "version": "0.1.0",
     "private": false,
     "keywords": [
         "config",
-        "eslint",
-        "eslint-config"
+        "oxfmt",
+        "oxfmt-config"
     ],
-    "homepage": "https://github.com/No-Deprecated-Dependencies/config/packages/eslint-config",
+    "homepage": "https://github.com/No-Deprecated-Dependencies/config/packages/oxfmt-config",
     "license": "MIT",
     "author": "Aleksei Saenko",
     "repository": {
@@ -27,15 +27,7 @@
     "scripts": {
         "build": "tsdown"
     },
-    "dependencies": {
-        "@eslint/config-helpers": "catalog:",
-        "@eslint/js": "catalog:",
-        "eslint-plugin-perfectionist": "catalog:",
-        "eslint-plugin-react": "catalog:",
-        "globals": "catalog:",
-        "typescript-eslint": "catalog:"
-    },
     "peerDependencies": {
-        "eslint": ">=9.0.0"
+        "oxfmt": ">=0.40.0"
     }
 }

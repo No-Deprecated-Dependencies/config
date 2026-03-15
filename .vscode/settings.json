@@ -1,13 +1,11 @@
 {
-    "biome.enabled": false,
     "cSpell.language": "en,ru",
-    "cSpell.words": ["barcodes", "domutils", "jsqr", "nddeps", "zxing"],
+    "cSpell.words": ["barcodes", "domutils", "jiti", "jsqr", "nddeps", "oxfmt", "tsdown", "zxing"],
     "editor.codeActionsOnSave": {
-        "source.fixAll": "explicit"
+        "source.fixAll.eslint": "explicit",
     },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "oxc.oxc-vscode",
     "editor.formatOnSave": true,
     "eslint.enable": true,
-    "prettier.enable": true,
-    "stylelint.enable": true
+    "prettier.enable": false,
 }

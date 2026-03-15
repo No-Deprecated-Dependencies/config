@@ -1,7 +1,6 @@
-import type { Config } from 'prettier'
+import { defineConfig } from 'oxfmt'
 
-const config: Config = {
-    endOfLine: 'auto',
+const config = defineConfig({
     printWidth: 120,
     proseWrap: 'always',
     quoteProps: 'consistent',
@@ -11,6 +10,6 @@ const config: Config = {
     tabWidth: 4,
     trailingComma: 'all',
     vueIndentScriptAndStyle: false,
-}
+})
 
 export { config }

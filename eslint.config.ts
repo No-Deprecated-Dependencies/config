@@ -1,3 +1,8 @@
 import { nddeps } from './packages/eslint-config/src/index.ts'
 
-export default nddeps()
+export default nddeps({
+    plugins: {
+        perfectionist: true,
+        typescript: true,
+    },
+})
