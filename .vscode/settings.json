@@ -1,11 +1,9 @@
 {
     "cSpell.language": "en,ru",
-    "cSpell.words": ["barcodes", "domutils", "jiti", "jsqr", "nddeps", "oxfmt", "tsdown", "zxing"],
+    "cSpell.words": ["barcodes", "domutils", "jiti", "jsqr", "nddeps", "oxfmt", "oxlint", "tsdown", "zxing"],
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit",
     },
     "editor.defaultFormatter": "oxc.oxc-vscode",
     "editor.formatOnSave": true,
-    "eslint.enable": true,
-    "prettier.enable": false,
 }
