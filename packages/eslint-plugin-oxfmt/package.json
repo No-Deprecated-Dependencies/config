@@ -1,0 +1,37 @@
+{
+    "name": "@nddeps/eslint-plugin-oxfmt",
+    "version": "0.0.0",
+    "private": true,
+    "keywords": [
+        "eslint",
+        "eslint-plugin-oxfmt",
+        "plugin"
+    ],
+    "homepage": "https://github.com/No-Deprecated-Dependencies/config/packages/eslint-plugin-oxfmt",
+    "license": "MIT",
+    "author": "Aleksei Saenko",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/No-Deprecated-Dependencies/config.git"
+    },
+    "files": [
+        "./dist"
+    ],
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": "./dist/index.js",
+        "./package.json": "./package.json"
+    },
+    "scripts": {
+        "build": "tsdown"
+    },
+    "dependencies": {
+        "prettier-linter-helpers": "catalog:"
+    },
+    "peerDependencies": {
+        "eslint": "catalog:",
+        "oxfmt": "catalog:"
+    }
+}

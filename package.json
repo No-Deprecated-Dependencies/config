@@ -1,6 +1,6 @@
 {
     "name": "@nddeps/config",
-    "version": "0.3.0",
+    "version": "0.0.0",
     "private": true,
     "workspaces": [
         "packages/*"
@@ -17,11 +17,13 @@
         "jiti": "catalog:",
         "oxfmt": "catalog:",
         "prettier": "catalog:",
+        "prettier-linter-helpers": "catalog:",
         "stylelint": "catalog:",
         "stylelint-config-recess-order": "catalog:",
         "stylelint-config-standard": "catalog:",
         "stylelint-config-standard-scss": "catalog:",
         "stylelint-order": "catalog:",
+        "synckit": "catalog:",
         "tsdown": "catalog:",
         "typescript": "catalog:",
         "typescript-eslint": "catalog:"
