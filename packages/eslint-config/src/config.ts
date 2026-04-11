@@ -43,12 +43,12 @@ async function nddeps(
     }
 
     if (options.plugins?.next) {
-        const next = await import('eslint-config-next/core-web-vitals')
+        const next = await import('eslint-config-next/core-web-vitals').then((m) => m.default)
         baseConfig.push(...next)
     }
 
     if (options.plugins?.next && options.plugins.typescript) {
-        const nextTypescript = await import('eslint-config-next/typescript')
+        const nextTypescript = await import('eslint-config-next/typescript').then((m) => m.default)
         baseConfig.push(...nextTypescript)
     }
 
