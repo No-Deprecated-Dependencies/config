@@ -179,6 +179,9 @@ importers:
       typescript-eslint:
         specifier: 'catalog:'
         version: 8.56.1(eslint@10.0.3(jiti@2.6.1))(typescript@5.9.3)
+      vue-eslint-parser:
+        specifier: 'catalog:'
+        version: 10.4.0(eslint@10.0.3(jiti@2.6.1))
 
   packages/eslint-plugin-oxfmt:
     dependencies:
