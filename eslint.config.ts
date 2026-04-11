@@ -4,5 +4,6 @@ export default nddeps({
     plugins: {
         perfectionist: true,
         typescript: true,
+        vue: true,
     },
 })

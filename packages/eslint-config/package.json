@@ -38,6 +38,10 @@
         "typescript-eslint": "catalog:",
         "vue-eslint-parser": "catalog:"
     },
+    "devDependencies": {
+        "eslint": "catalog:",
+        "next": "catalog:"
+    },
     "peerDependencies": {
         "eslint": ">=9.0.0"
     }

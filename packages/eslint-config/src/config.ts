@@ -1,4 +1,4 @@
-import { type ConfigWithExtendsArray, defineConfig } from '@eslint/config-helpers'
+import { type ConfigWithExtends, type ConfigWithExtendsArray, defineConfig } from '@eslint/config-helpers'
 import js from '@eslint/js'
 import globals from 'globals'
 
@@ -32,24 +32,24 @@ async function nddeps(
         },
     ]
 
-    if (options.plugins?.typescript) {
+    if (options.plugins?.typescript && !options.plugins?.next) {
         const typescript = await import('typescript-eslint')
         baseConfig.push(typescript.configs.recommended)
     }
 
-    if (options.plugins?.react) {
+    if (options.plugins?.react && !options.plugins?.next) {
         const react = await import('eslint-plugin-react')
-        baseConfig.push(react.configs.flat.recommended)
+        baseConfig.push(react.configs.flat.recommended as ConfigWithExtends)
     }
 
     if (options.plugins?.next) {
         const next = await import('eslint-config-next/core-web-vitals')
-        baseConfig.push(next)
+        baseConfig.push(...next)
     }
 
     if (options.plugins?.next && options.plugins.typescript) {
         const nextTypescript = await import('eslint-config-next/typescript')
-        baseConfig.push(nextTypescript)
+        baseConfig.push(...nextTypescript)
     }
 
     if (options.plugins?.vue) {
@@ -62,7 +62,7 @@ async function nddeps(
         baseConfig.push(perfectionist.configs['recommended-alphabetical'])
     }
 
-    return defineConfig([...baseConfig, ...userConfig])
+    return defineConfig(baseConfig, userConfig)
 }
 
 export { nddeps }

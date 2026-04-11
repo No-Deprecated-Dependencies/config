@@ -17,6 +17,7 @@
         "eslint-plugin-vue": "catalog:",
         "globals": "catalog:",
         "jiti": "catalog:",
+        "next": "catalog:",
         "oxfmt": "catalog:",
         "prettier": "catalog:",
         "prettier-linter-helpers": "catalog:",
