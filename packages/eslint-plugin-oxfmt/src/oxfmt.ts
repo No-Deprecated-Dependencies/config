@@ -5,7 +5,7 @@ import { createSyncFn, type Syncify } from 'synckit'
 
 let format: Syncify<typeof import('oxfmt').format>
 
-const config: Rule.RuleModule = {
+const plugin: Rule.RuleModule = {
     create(context) {
         return {
             [context.sourceCode.ast.type || 'Program']() {
@@ -60,4 +60,4 @@ const config: Rule.RuleModule = {
     },
 }
 
-export default config
+export { plugin }

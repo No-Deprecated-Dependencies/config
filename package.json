@@ -11,8 +11,10 @@
         "@eslint/js": "catalog:",
         "@prettier/plugin-oxc": "catalog:",
         "eslint": "catalog:",
+        "eslint-config-next": "catalog:",
         "eslint-plugin-perfectionist": "catalog:",
         "eslint-plugin-react": "catalog:",
+        "eslint-plugin-vue": "catalog:",
         "globals": "catalog:",
         "jiti": "catalog:",
         "oxfmt": "catalog:",
@@ -26,7 +28,8 @@
         "synckit": "catalog:",
         "tsdown": "catalog:",
         "typescript": "catalog:",
-        "typescript-eslint": "catalog:"
+        "typescript-eslint": "catalog:",
+        "vue-eslint-parser": "catalog:"
     },
-    "packageManager": "pnpm@10.30.3"
+    "packageManager": "pnpm@10.33.0"
 }

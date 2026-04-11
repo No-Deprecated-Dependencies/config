@@ -1,6 +1,6 @@
 {
     "name": "@nddeps/eslint-config",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "private": false,
     "keywords": [
         "config",
@@ -30,10 +30,13 @@
     "dependencies": {
         "@eslint/config-helpers": "catalog:",
         "@eslint/js": "catalog:",
+        "eslint-config-next": "catalog:",
         "eslint-plugin-perfectionist": "catalog:",
         "eslint-plugin-react": "catalog:",
+        "eslint-plugin-vue": "catalog:",
         "globals": "catalog:",
-        "typescript-eslint": "catalog:"
+        "typescript-eslint": "catalog:",
+        "vue-eslint-parser": "catalog:"
     },
     "peerDependencies": {
         "eslint": ">=9.0.0"
