@@ -6,6 +6,11 @@
         "packages/*"
     ],
     "type": "module",
+    "scripts": {
+        "format": "oxfmt",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix"
+    },
     "devDependencies": {
         "@clack/prompts": "catalog:",
         "@eslint/config-helpers": "catalog:",
