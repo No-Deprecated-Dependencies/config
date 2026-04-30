@@ -1,6 +1,6 @@
 {
     "cSpell.language": "en,ru",
-    "cSpell.words": ["barcodes", "domutils", "jiti", "jsqr", "nddeps", "oxfmt", "oxlint", "tsdown", "zxing"],
+    "cSpell.words": ["invisibles", "jiti", "nddeps", "oxfmt", "oxlint", "syncify", "tsdown"],
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit",
     },

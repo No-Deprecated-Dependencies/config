@@ -2,6 +2,7 @@
     "compilerOptions": {
         "allowImportingTsExtensions": true,
         "erasableSyntaxOnly": true,
+        "jsx": "preserve",
         "lib": ["ES2022", "DOM", "DOM.Iterable"],
         "module": "ESNext",
         "moduleDetection": "force",
@@ -15,7 +16,7 @@
         "strict": true,
         "target": "ES2022",
         "useDefineForClassFields": true,
-        "verbatimModuleSyntax": true
+        "verbatimModuleSyntax": true,
     },
-    "include": ["packages"]
+    "include": ["packages"],
 }

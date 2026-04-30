@@ -28,21 +28,36 @@
         "build": "tsdown"
     },
     "dependencies": {
+        "@clack/prompts": "catalog:",
         "@eslint/config-helpers": "catalog:",
         "@eslint/js": "catalog:",
-        "eslint-config-next": "catalog:",
         "eslint-plugin-perfectionist": "catalog:",
-        "eslint-plugin-react": "catalog:",
-        "eslint-plugin-vue": "catalog:",
         "globals": "catalog:",
-        "typescript-eslint": "catalog:",
-        "vue-eslint-parser": "catalog:"
+        "typescript-eslint": "catalog:"
     },
     "devDependencies": {
         "eslint": "catalog:",
         "next": "catalog:"
     },
     "peerDependencies": {
-        "eslint": ">=9.0.0"
+        "eslint": ">=9.0.0",
+        "eslint-config-next": ">=16.0.0",
+        "eslint-plugin-react": ">=7.0.0",
+        "eslint-plugin-vue": ">=10.0.0",
+        "vue-eslint-parser": ">=10.0.0"
+    },
+    "peerDependenciesMeta": {
+        "eslint-config-next": {
+            "optional": true
+        },
+        "eslint-plugin-react": {
+            "optional": true
+        },
+        "eslint-plugin-vue": {
+            "optional": true
+        },
+        "vue-eslint-parser": {
+            "optional": true
+        }
     }
 }

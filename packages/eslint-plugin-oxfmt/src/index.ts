@@ -1,4 +1,4 @@
-import { plugin } from './oxfmt.ts'
+import { plugin } from './oxfmt'
 
 export { plugin }
 

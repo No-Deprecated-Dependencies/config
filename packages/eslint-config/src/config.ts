@@ -1,6 +1,7 @@
 import { type ConfigWithExtends, type ConfigWithExtendsArray, defineConfig } from '@eslint/config-helpers'
 import js from '@eslint/js'
 import globals from 'globals'
+import typescript from 'typescript-eslint'
 
 async function nddeps(
     options: {
@@ -14,7 +15,7 @@ async function nddeps(
         prepend?: ConfigWithExtendsArray
     } = {},
     ...userConfig: ConfigWithExtendsArray
-): Promise<ConfigWithExtendsArray> {
+) {
     const baseConfig: ConfigWithExtendsArray = [
         ...(options.prepend ?? []),
         {
@@ -33,7 +34,6 @@ async function nddeps(
     ]
 
     if (options.plugins?.typescript && !options.plugins?.next) {
-        const typescript = await import('typescript-eslint')
         baseConfig.push(typescript.configs.recommended)
     }
 
@@ -54,7 +54,20 @@ async function nddeps(
 
     if (options.plugins?.vue) {
         const vue = await import('eslint-plugin-vue')
-        baseConfig.push(vue.configs['flat/recommended'])
+        baseConfig.push(...vue.configs['flat/recommended'], { rules: { 'vue/html-indent': 'off' } })
+    }
+
+    if (options.plugins?.vue && options.plugins.typescript) {
+        const vueParser = await import('vue-eslint-parser')
+        baseConfig.push({
+            files: ['*.vue', '**/*.vue'],
+            languageOptions: {
+                parser: vueParser,
+                parserOptions: {
+                    parser: typescript.parser,
+                },
+            },
+        })
     }
 
     if (options.plugins?.perfectionist) {

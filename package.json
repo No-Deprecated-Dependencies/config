@@ -7,9 +7,14 @@
     ],
     "type": "module",
     "devDependencies": {
+        "@clack/prompts": "catalog:",
         "@eslint/config-helpers": "catalog:",
         "@eslint/js": "catalog:",
+        "@nuxt/eslint-plugin": "catalog:",
         "@prettier/plugin-oxc": "catalog:",
+        "@types/node": "catalog:",
+        "@types/react": "catalog:",
+        "@types/react-dom": "catalog:",
         "eslint": "catalog:",
         "eslint-config-next": "catalog:",
         "eslint-plugin-perfectionist": "catalog:",
@@ -30,6 +35,7 @@
         "tsdown": "catalog:",
         "typescript": "catalog:",
         "typescript-eslint": "catalog:",
+        "vitest": "catalog:",
         "vue-eslint-parser": "catalog:"
     },
     "packageManager": "pnpm@10.33.0"
