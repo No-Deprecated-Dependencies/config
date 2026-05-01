@@ -48,11 +48,15 @@ const rule: Rule.RuleModule = {
         }
     },
     meta: {
-        fixable: 'whitespace',
+        fixable: 'code',
         messages: {
             delete: 'Delete `{{ deleteText }}`',
             insert: 'Insert `{{ insertText }}`',
             replace: 'Replace `{{ deleteText }}` with `{{ insertText }}`',
+        },
+        schema: {
+            additionalProperties: true,
+            type: 'object',
         },
         type: 'layout',
     },
