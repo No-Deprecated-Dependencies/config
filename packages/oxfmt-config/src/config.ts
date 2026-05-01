@@ -2,15 +2,17 @@ import { defineConfig } from 'oxfmt'
 
 const config = defineConfig({
     ignorePatterns: [
+        '**/*.json',
+        '**/*.json5',
+        '**/*.jsonc',
+        '**/*.yaml',
+        '**/*.yml',
         '.agents/**',
         '.cursor/**',
         '.next/**',
         'AGENTS.md',
         'CLAUDE.md',
-        'pnpm-lock.yaml',
-        'pnpm-workspace.yaml',
-        'skills-lock.json',
-        'skills.json',
+        '!package.json',
     ],
     printWidth: 120,
     proseWrap: 'always',
