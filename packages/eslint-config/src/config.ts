@@ -46,10 +46,25 @@ async function nddeps(
     }
 
     if (options.plugins?.react && !options.plugins?.next) {
-        const react = await import('eslint-plugin-react')
+        const react = await import('eslint-plugin-react').then((m) => m.default)
+        const reactHooks = await import('eslint-plugin-react-hooks').then((m) => m.default)
         baseConfig.push(
             react.configs.flat.recommended as ConfigWithExtends,
             react.configs.flat['jsx-runtime'] as ConfigWithExtends,
+            reactHooks.configs.flat.recommended,
+            {
+                name: 'nddeps/react',
+                rules: {
+                    'react/jsx-sort-props': [
+                        'error',
+                        {
+                            callbacksLast: true,
+                            reservedFirst: true,
+                            shorthandLast: true,
+                        },
+                    ],
+                },
+            },
         )
     }
 
@@ -64,12 +79,17 @@ async function nddeps(
     }
 
     if (options.plugins?.vue) {
-        const vue = await import('eslint-plugin-vue')
-        baseConfig.push(...vue.configs['flat/recommended'], { rules: { 'vue/html-indent': 'off' } })
+        const vue = await import('eslint-plugin-vue').then((m) => m.default)
+        baseConfig.push(...vue.configs['flat/recommended'], {
+            name: 'nddeps/vue',
+            rules: {
+                'vue/html-indent': 'off',
+            },
+        })
     }
 
     if (options.plugins?.vue && options.plugins.typescript) {
-        const vueParser = await import('vue-eslint-parser')
+        const vueParser = await import('vue-eslint-parser').then((m) => m.default)
         baseConfig.push({
             files: ['*.vue', '**/*.vue'],
             languageOptions: {
@@ -82,17 +102,29 @@ async function nddeps(
     }
 
     if (options.plugins?.perfectionist) {
-        const perfectionist = await import('eslint-plugin-perfectionist')
+        const perfectionist = await import('eslint-plugin-perfectionist').then((m) => m.default)
         baseConfig.push(perfectionist.configs['recommended-alphabetical'], {
             name: 'nddeps/perfectionist',
             rules: {
+                'perfectionist/sort-jsx-props': [
+                    'off',
+                    {
+                        customGroups: [
+                            {
+                                elementNamePattern: '^on.+',
+                                groupName: 'callbacks',
+                            },
+                        ],
+                        groups: ['unknown', 'callbacks'],
+                    },
+                ],
                 'perfectionist/sort-objects': ['error', { newlinesBetween: 0 }],
             },
         })
     }
 
     if (options.plugins?.json) {
-        const json = await import('eslint-plugin-jsonc')
+        const json = await import('eslint-plugin-jsonc').then((m) => m.default)
         baseConfig.push(
             ...json.configs['recommended-with-jsonc'],
             {
@@ -100,7 +132,8 @@ async function nddeps(
                 rules: {
                     'jsonc/array-bracket-newline': ['error', { multiline: true }],
                     'jsonc/array-bracket-spacing': ['error', 'never'],
-                    'jsonc/array-element-newline': ['error', { multiline: true }],
+                    'jsonc/array-element-newline': ['error', { minItems: 2, multiline: true }],
+                    'jsonc/comma-dangle': ['error', 'never'],
                     'jsonc/comma-style': ['error', 'last'],
                     'jsonc/indent': ['error', 4],
                     'jsonc/key-spacing': ['error', { afterColon: true, beforeColon: false, mode: 'strict' }],
@@ -124,9 +157,9 @@ async function nddeps(
     }
 
     if (options.plugins?.yaml) {
-        const yml = await import('eslint-plugin-yml')
+        const yaml = await import('eslint-plugin-yml').then((m) => m.default)
         baseConfig.push(
-            ...yml.configs.standard,
+            ...yaml.configs.standard,
             {
                 name: 'nddeps/yaml',
                 rules: {

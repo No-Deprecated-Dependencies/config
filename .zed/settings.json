@@ -4,26 +4,32 @@
 // see the documentation: https://zed.dev/docs/configuring-zed#settings-files
 {
     "code_actions_on_format": {
-        "source.fixAll.eslint": true,
+        "source.fixAll.eslint": true
     },
     "colorize_brackets": true,
     "format_on_save": "on",
     "formatter": [
         {
             "language_server": {
-                "name": "oxfmt",
-            },
-        },
+                "name": "oxfmt"
+            }
+        }
     ],
     "languages": {
         "JSON": {
             "formatter": "language_server",
-            "language_servers": ["...", "json-language-server"]
+            "language_servers": [
+                "...",
+                "json-language-server"
+            ]
         },
         "YAML": {
             "formatter": "language_server",
-            "language_servers": ["...", "yaml-language-server"]
-        },
+            "language_servers": [
+                "...",
+                "yaml-language-server"
+            ]
+        }
     },
-    "tab_size": 4,
+    "tab_size": 4
 }

@@ -1,9 +1,28 @@
 {
     "cSpell.language": "en,ru",
-    "cSpell.words": ["invisibles", "jiti", "nddeps", "oxfmt", "oxlint", "syncify", "tsdown"],
+    "cSpell.words": [
+        "invisibles",
+        "jiti",
+        "nddeps",
+        "oxfmt",
+        "oxlint",
+        "syncify",
+        "tsdown"
+    ],
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit",
+        "source.fixAll.eslint": "explicit"
     },
     "editor.defaultFormatter": "oxc.oxc-vscode",
     "editor.formatOnSave": true,
+    "eslint.validate": [
+        "astro",
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue",
+        "json",
+        "jsonc",
+        "yaml"
+    ]
 }

@@ -4,6 +4,7 @@ export default nddeps({
     plugins: {
         json: true,
         perfectionist: true,
+        react: true,
         typescript: true,
         vue: true,
         yaml: true,

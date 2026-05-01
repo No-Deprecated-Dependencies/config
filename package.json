@@ -25,6 +25,7 @@
         "eslint-plugin-jsonc": "catalog:",
         "eslint-plugin-perfectionist": "catalog:",
         "eslint-plugin-react": "catalog:",
+        "eslint-plugin-react-hooks": "catalog:",
         "eslint-plugin-vue": "catalog:",
         "eslint-plugin-yml": "catalog:",
         "globals": "catalog:",
