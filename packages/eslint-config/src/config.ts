@@ -1,4 +1,9 @@
-import { type ConfigWithExtends, type ConfigWithExtendsArray, defineConfig } from '@eslint/config-helpers'
+import {
+    type ConfigWithExtends,
+    type ConfigWithExtendsArray,
+    defineConfig,
+    globalIgnores,
+} from '@eslint/config-helpers'
 import js from '@eslint/js'
 import globals from 'globals'
 import typescript from 'typescript-eslint'
@@ -6,11 +11,13 @@ import typescript from 'typescript-eslint'
 async function nddeps(
     options: {
         plugins?: {
+            json?: boolean
             next?: boolean
             perfectionist?: boolean
             react?: boolean
             typescript?: boolean
             vue?: boolean
+            yaml?: boolean
         }
         prepend?: ConfigWithExtendsArray
     } = {},
@@ -31,6 +38,7 @@ async function nddeps(
                 js,
             },
         },
+        globalIgnores(['**/dist', '**/node_modules', '**/package.json']),
     ]
 
     if (options.plugins?.typescript && !options.plugins?.next) {
@@ -72,7 +80,87 @@ async function nddeps(
 
     if (options.plugins?.perfectionist) {
         const perfectionist = await import('eslint-plugin-perfectionist')
-        baseConfig.push(perfectionist.configs['recommended-alphabetical'])
+        baseConfig.push(perfectionist.configs['recommended-alphabetical'], {
+            name: 'nddeps/perfectionist',
+            rules: {
+                'perfectionist/sort-objects': ['error', { newlinesBetween: 0 }],
+            },
+        })
+    }
+
+    if (options.plugins?.json) {
+        const json = await import('eslint-plugin-jsonc')
+        baseConfig.push(
+            ...json.configs['recommended-with-jsonc'],
+            {
+                name: 'nddeps/json',
+                rules: {
+                    'jsonc/array-bracket-newline': ['error', { multiline: true }],
+                    'jsonc/array-bracket-spacing': ['error', 'never'],
+                    'jsonc/array-element-newline': ['error', { multiline: true }],
+                    'jsonc/comma-style': ['error', 'last'],
+                    'jsonc/indent': ['error', 4],
+                    'jsonc/key-spacing': ['error', { afterColon: true, beforeColon: false, mode: 'strict' }],
+                    'jsonc/object-curly-newline': ['error', { consistent: true }],
+                    'jsonc/object-curly-spacing': ['error', 'always'],
+                    'jsonc/object-property-newline': 'error',
+                    'jsonc/sort-keys': [
+                        'error',
+                        'asc',
+                        {
+                            allowLineSeparatedGroups: false,
+                            caseSensitive: true,
+                            minKeys: 2,
+                            natural: false,
+                        },
+                    ],
+                },
+            },
+            globalIgnores(['**/*.lock.json']),
+        )
+    }
+
+    if (options.plugins?.yaml) {
+        const yml = await import('eslint-plugin-yml')
+        baseConfig.push(
+            ...yml.configs.standard,
+            {
+                name: 'nddeps/yaml',
+                rules: {
+                    'yml/indent': ['error', 4, { indicatorValueIndent: 2 }],
+                    'yml/sort-keys': [
+                        'error',
+                        'asc',
+                        {
+                            allowLineSeparatedGroups: false,
+                            caseSensitive: true,
+                            minKeys: 2,
+                            natural: false,
+                        },
+                    ],
+                    'yml/sort-sequence-values': [
+                        'error',
+                        {
+                            order: {
+                                caseSensitive: true,
+                                natural: false,
+                                type: 'asc',
+                            },
+                            pathPattern: '^$',
+                        },
+                    ],
+                },
+            },
+            {
+                files: ['**/workflows/**/*.yaml', '**/workflows/**/*.yml'],
+                name: 'nddeps/yaml/workflows',
+                rules: {
+                    'yml/sort-keys': 'off',
+                    'yml/sort-sequence-values': 'off',
+                },
+            },
+            globalIgnores(['**/*-lock.yaml']),
+        )
     }
 
     return defineConfig(baseConfig, userConfig)

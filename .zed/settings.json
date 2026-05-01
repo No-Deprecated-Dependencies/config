@@ -15,5 +15,15 @@
             },
         },
     ],
+    "languages": {
+        "JSON": {
+            "formatter": "language_server",
+            "language_servers": ["...", "json-language-server"]
+        },
+        "YAML": {
+            "formatter": "language_server",
+            "language_servers": ["...", "yaml-language-server"]
+        },
+    },
     "tab_size": 4,
 }
