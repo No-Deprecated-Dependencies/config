@@ -47,7 +47,10 @@ async function nddeps(
 
     if (options.plugins?.react && !options.plugins?.next) {
         const react = await import('eslint-plugin-react')
-        baseConfig.push(react.configs.flat.recommended as ConfigWithExtends)
+        baseConfig.push(
+            react.configs.flat.recommended as ConfigWithExtends,
+            react.configs.flat['jsx-runtime'] as ConfigWithExtends,
+        )
     }
 
     if (options.plugins?.next) {
