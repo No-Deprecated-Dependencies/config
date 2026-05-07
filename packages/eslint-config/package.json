@@ -36,12 +36,11 @@
         "typescript-eslint": "catalog:"
     },
     "devDependencies": {
-        "eslint": "catalog:",
-        "next": "catalog:"
+        "eslint": "catalog:"
     },
     "peerDependencies": {
+        "@next/eslint-plugin-next": ">=16.0.0",
         "eslint": ">=9.0.0",
-        "eslint-config-next": ">=16.0.0",
         "eslint-plugin-jsonc": ">=3.0.0",
         "eslint-plugin-react": ">=7.0.0",
         "eslint-plugin-react-hooks": ">=7.0.0",
@@ -50,7 +49,7 @@
         "vue-eslint-parser": ">=10.0.0"
     },
     "peerDependenciesMeta": {
-        "eslint-config-next": {
+        "@next/eslint-plugin-next": {
             "optional": true
         },
         "eslint-plugin-jsonc": {

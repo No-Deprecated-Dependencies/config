@@ -15,6 +15,7 @@
         "@clack/prompts": "catalog:",
         "@eslint/config-helpers": "catalog:",
         "@eslint/js": "catalog:",
+        "@next/eslint-plugin-next": "catalog:",
         "@nuxt/eslint-plugin": "catalog:",
         "@prettier/plugin-oxc": "catalog:",
         "@types/node": "catalog:",

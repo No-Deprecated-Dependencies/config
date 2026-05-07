@@ -1,5 +1,5 @@
-import { nddeps } from './config.ts'
+import { createConfig } from './create-config.ts'
 
-export { nddeps }
+export { createConfig }
 
-export default nddeps
+export default createConfig

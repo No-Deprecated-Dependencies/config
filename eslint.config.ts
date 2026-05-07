@@ -1,6 +1,6 @@
-import { nddeps } from './packages/eslint-config/src/index.ts'
+import { createConfig } from './packages/eslint-config/src/index.ts'
 
-export default nddeps({
+export default createConfig({
     plugins: {
         json: true,
         perfectionist: true,
