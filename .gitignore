@@ -8,6 +8,7 @@ yarn-debug.log*
 yarn-error.log*
 
 *.local
+bin
 dist
 dist-ssr
 node_modules

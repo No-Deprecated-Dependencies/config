@@ -21,6 +21,7 @@
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
+        "dedent": "catalog:",
         "eslint": "catalog:",
         "eslint-config-next": "catalog:",
         "eslint-plugin-jsonc": "catalog:",
